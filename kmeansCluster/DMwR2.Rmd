@@ -1,0 +1,45 @@
+---
+title: "DMwR2 demo"
+author: "Dr. J"
+date: "11/15/2019"
+output: 
+  html_document:
+  toc: true
+  levels: 2
+  number_sections: true
+---
+
+```{r setup }
+knitr::opts_chunk$set(echo = TRUE)
+library(DMwR2)
+```
+
+# Unsupervised learning: cluster analysis
+
+```{r dataSets, echo=FALSE, include=FALSE}
+data() # to see all the data sets available
+```
+
+## load the sales data set
+
+```{r}
+data(sales)
+salesDF = sales
+head(salesDF)
+```
+
+
+The sales data set consists of sale transaction reports.  there are just over 400,000 transactions.  The entries are 
+
+Variable |  Description
+---------|----------------
+ID      | descripton    
+Prod     | product ID
+Quant    | quantity sold
+Val     |  reported value of the transaction
+Insp    | categorical variable: 'ok', 'fraud', 'unkn'
+
+Only a small percentage of the transactions have been verified as either 'ok' or 'fraud.' 
+The purpose of the study is to Use cluser analysis to identify the top 50 'unkn' transactions to be investigated for possible fraud
+
+## Next step.... 
